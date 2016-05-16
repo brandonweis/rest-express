@@ -36142,7 +36142,7 @@
 	    console.log("fetching articles");
 	    return function (dispatch) {
 	        dispatch(requestArticles());
-	        return fetch('http://127.0.0.1/articles', {
+	        return fetch('/articles', {
 	            method: 'GET'
 	        }).then(function (response) {
 	            return response.json();
@@ -36155,7 +36155,7 @@
 	function createArticle(article) {
 	    return function (dispatch) {
 	        dispatch(postArticle());
-	        return fetch('http://127.0.0.1/articles', {
+	        return fetch('/articles', {
 	            method: 'POST',
 	            body: 'header=' + article.header + '&content=' + article.content,
 	            headers: {
@@ -36175,7 +36175,7 @@
 	function eraseArticle(article) {
 	    return function (dispatch) {
 	        dispatch(deleteArticle());
-	        return fetch('http://127.0.0.1/articles/' + article.id, {
+	        return fetch('/articles/' + article.id, {
 	            method: 'DELETE',
 	            headers: {
 	                'Access-Control-Request-Method': 'DELETE'
