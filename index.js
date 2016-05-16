@@ -5,6 +5,7 @@ var uuid = require("./lib/uuid");
 var fs = require("fs");
 
 var app = express();
+app.use(express.static('public'));
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 
