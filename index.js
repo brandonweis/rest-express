@@ -81,8 +81,8 @@ app.delete('/articles/:id', function (req, res, next) {
     });
 });
 
-var server = app.listen(8080, function () {
-    var port = server.address().port;
+var port = app.get('port') || 8080
+var server = app.listen(port, function () {
     console.log('Listening at port %s', port);
 })
 module.exports = server
