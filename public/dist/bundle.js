@@ -36142,7 +36142,7 @@
 	    console.log("fetching articles");
 	    return function (dispatch) {
 	        dispatch(requestArticles());
-	        return fetch('http://localhost:8080/articles', {
+	        return fetch('http://127.0.0.1/articles', {
 	            method: 'GET'
 	        }).then(function (response) {
 	            return response.json();
@@ -36155,7 +36155,7 @@
 	function createArticle(article) {
 	    return function (dispatch) {
 	        dispatch(postArticle());
-	        return fetch('http://localhost:8080/articles', {
+	        return fetch('http://127.0.0.1/articles', {
 	            method: 'POST',
 	            body: 'header=' + article.header + '&content=' + article.content,
 	            headers: {
@@ -36175,7 +36175,7 @@
 	function eraseArticle(article) {
 	    return function (dispatch) {
 	        dispatch(deleteArticle());
-	        return fetch('http://localhost:8080/articles/' + article.id, {
+	        return fetch('http://127.0.0.1/articles/' + article.id, {
 	            method: 'DELETE',
 	            headers: {
 	                'Access-Control-Request-Method': 'DELETE'
@@ -37553,7 +37553,7 @@
 /* 646 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var require;var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(process, global, module) {/*!
+	var __WEBPACK_AMD_DEFINE_RESULT__;var require;/* WEBPACK VAR INJECTION */(function(process, global, module) {/*!
 	 * @overview es6-promise - a tiny implementation of Promises/A+.
 	 * @copyright Copyright (c) 2014 Yehuda Katz, Tom Dale, Stefan Penner and contributors (Conversion to ES6 API by Jake Archibald)
 	 * @license   Licensed under MIT license
